@@ -35,7 +35,7 @@ resource "aws_sfn_state_machine" "sfn_state_machine" {
     },
     "InvokeLambda": {
       "Type": "Task",
-      "Resource": "${aws_lambda_function.this.arn}",
+      "Resource": "${aws_lambda_function.api_step.arn}",
       "InputPath": "$",
       "ResultPath": "$.lambda_output",
       "OutputPath": "$.lambda_output",
